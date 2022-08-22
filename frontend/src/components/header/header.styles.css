@@ -1,0 +1,45 @@
+.header {
+  background-color: #fff;
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+}
+
+.logo-container {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.8rem 1.2rem;
+  border-radius: 15px;
+}
+
+.logo {
+  width: 3.4rem;
+  height: 1.6rem;
+  vertical-align: middle;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  cursor: pointer;
+  color: #747474;
+  padding: 0.6rem 1rem;
+}
+
+.nav-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 440px) {
+  .header {
+    padding: 1rem;
+  }
+}

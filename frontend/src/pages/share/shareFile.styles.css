@@ -1,0 +1,92 @@
+.upload-page {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  align-content: center;
+  gap: 5rem;
+}
+
+.uploaded-file-link,
+.file-form {
+  width: min(90vw, 35rem);
+  margin: auto;
+}
+
+.file-form {
+  padding: 2.4rem;
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.file-form-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 3.2rem;
+}
+
+.upload-file-label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-size: 2rem;
+  gap: 1rem;
+  color: #747474;
+}
+
+.upload-file-label:hover {
+  text-decoration: underline;
+}
+
+.upload-file-label img {
+  height: 4.5rem;
+}
+
+.uploaded-file-details-box {
+  padding: 1.5rem;
+  margin-top: 2rem;
+  background-color: #fafafa;
+  height: 18rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+
+.uploaded-file {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  fill: #666;
+  cursor: pointer;
+}
+
+.delete-file-btn {
+  display: none;
+}
+
+.delete-file-btn svg {
+  width: 1.5rem;
+}
+
+.uploaded-file:hover {
+  color: #333;
+  fill: #333;
+}
+
+.uploaded-file:hover .uploaded-file-size {
+  display: none;
+}
+
+.uploaded-file:hover .delete-file-btn {
+  display: block;
+}
+
+.upload-button {
+  cursor: pointer;
+  background-color: #1b74e4;
+  color: #fff;
+  width: 100%;
+  border: 2px solid #1b74e4;
+  margin-top: 3.2rem;
+}

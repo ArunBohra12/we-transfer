@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+html {
+  /* Makes 1rem = 10px ==> makes it easier to calculate in rem */
+  font-size: 62.5%;
+}
+
+::selection {
+  background: #1b74e4;
+  color: #fff;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Variable declarations */
+:root {
+  --font-family-primary: 'Roboto', sans-serif;
+}
+
+body,
+#root {
+  height: 100vh;
+  width: 100%;
+}
+
+#root {
+  overflow: hidden;
+}
+
+a {
+  color: #747474;
+  text-decoration: none;
+}
+
+input {
+  font-size: 1.4rem;
+  line-height: 1.1;
+  color: #000;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+  padding-left: 1.6rem;
+  border: 1px solid #f1f1f1;
+  background-color: #f1f1f1;
+  border-radius: 2px;
+  height: 4rem;
+}
+
+input:focus {
+  background-color: #fff;
+  border: 1px solid #e0e4e6;
+}
+
+button {
+  height: 4rem;
+  font-size: 1.6rem;
+  outline: none;
+  background-color: #fff;
+}
+
+/* App css */
+
+body {
+  box-sizing: border-box;
+  font-family: var(--font-family-primary);
+  font-size: 1.6rem;
+}
+
+.alert {
+  min-width: 40rem;
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 300;
+  text-align: center;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  box-shadow: 0 2rem 4rem rgb(0 0 0 / 25%);
+}
+
+.alert--success {
+  background-color: #45ae68;
+}
+
+.alert--error {
+  background-color: #eb4d4b;
+}
+
+#root {
+  background-color: #d3dade;
+  display: grid;
+  grid-template-rows: minmax(min-content, max-content) 1fr minmax(min-content, max-content);
+}
+
+.main {
+  padding: 1.5rem 6.75rem;
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 540px) {
+  .main {
+    padding: 0;
+  }
+}
