@@ -8,8 +8,6 @@ We-Transfer is a file sharing application built on MERN stack. It allows you to 
 
 ## Getting Started
 
-<hr />
-
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
@@ -53,14 +51,12 @@ This is an example of how to list things you need to use the software and how to
    ```
 
 <br />
-<hr />
 
 ## ➕ Contributing
 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
 <br />
-<hr />
 
 ## 🌟 Show your support
 
