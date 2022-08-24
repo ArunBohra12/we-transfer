@@ -1,0 +1,71 @@
+.user-details {
+  margin: 2rem 0;
+  display: grid;
+  row-gap: 1rem;
+}
+
+.user-detail-text {
+  color: #747474;
+}
+
+.user-uploads {
+  margin-top: 2rem;
+}
+
+.uploads-heading {
+  margin-bottom: 2rem;
+}
+
+.user-uploaded-file {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background-color: #fff;
+  padding: 2rem;
+  box-shadow: 0.5rem 0.5rem 1rem rgb(0 0 0 / 25%);
+  margin-bottom: 2.5rem;
+}
+
+.upload-date-box {
+  margin-left: auto;
+}
+
+.upload-label {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.upload-date {
+  font-size: 1.4rem;
+  margin-top: 0.5rem;
+  color: #747474;
+}
+
+.download-link {
+  padding: 0.8rem 1.8rem;
+}
+
+/* Media queries */
+
+@media only screen and (max-width: 520px) {
+  .user-profile-page {
+    width: 85%;
+    margin: auto;
+  }
+
+  .user-uploaded-file {
+    flex-direction: column;
+  }
+
+  .uploaded-file-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-align: center;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  .upload-date-box {
+    margin-left: 0;
+  }
+}

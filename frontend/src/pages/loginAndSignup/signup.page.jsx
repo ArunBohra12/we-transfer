@@ -63,7 +63,7 @@ const SignupPage = () => {
             onChange={e => setPasswordConfirm(e.target.value)}
           />
         </div>
-        <button className='signup-btn'>Sign up</button>
+        <button className='btn-blue'>Sign up</button>
       </form>
     </section>
   );

@@ -1,3 +1,5 @@
+'use strict';
+
 export const setCookie = (name, value, expiryDays, secure = false, path = '/') => {
   const date = new Date();
   date.setTime(date.getTime() + expiryDays * 24 * 60 * 60 * 1000);

@@ -1,13 +1,15 @@
 import { useContext } from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import LoginPage from './pages/loginAndSignup/login.page';
 import SignupPage from './pages/loginAndSignup/signup.page';
 import Header from './components/header/header.component';
 import Footer from './components/footer/footer.component';
 import ShareFile from './pages/share/shareFile.page';
+import DownloadFile from './pages/download/download.page';
 import UserContext from './context/user.context';
 
 import './App.css';
+import ProfilePage from './pages/profile/profile.page';
 
 function App() {
   const { userInfo } = useContext(UserContext);
@@ -20,20 +22,15 @@ function App() {
         {userInfo ? (
           <Switch>
             <Route exact path='/upload' component={ShareFile} />
-            <Route exact path='/profile'>
-              Profile page
-            </Route>
-            <Route>
-              <Redirect to='/upload' />
-            </Route>
+            <Route exact path='/profile' component={ProfilePage} />
+            <Route exact path='/file/:fileId' children={<DownloadFile />} />
           </Switch>
         ) : (
           <Switch>
+            <Route exact path='/' component={LoginPage} />
             <Route exact path='/login' component={LoginPage} />
             <Route exact path='/signup' component={SignupPage} />
-            <Route>
-              <Redirect to='/login' />
-            </Route>
+            <Route exact path='/file/:fileId' children={<DownloadFile />} />
           </Switch>
         )}
       </main>

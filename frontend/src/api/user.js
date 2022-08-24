@@ -71,22 +71,48 @@ const userLogin = async formData => {
  * Function checks if user is logged in
  * @return { Boolean }
  */
-const isUserLoggedIn = () => {
+const userLoginCheck = () => {
   const userData = JSON.parse(localStorage.getItem('userInfo'));
   const jwt = getCookieValue('jwt');
 
-  if (!userData || !jwt) return false;
+  // If user does not have sufficient data log him out
+  if (!userData || !jwt) {
+    showAlert('error', 'You will be logged out. Please log in again');
+    userLogout();
 
-  // Check if the token is correct
+    setTimeout(() => (window.location.href = '/login'), 3000);
+  }
 };
 
 /**
  * Log user out
  */
-
 const userLogout = () => {
   localStorage.removeItem('userInfo');
   deleteCookie('jwt');
 };
 
-export { userSignup, userLogin, isUserLoggedIn, userLogout };
+/**
+ * Get all files and their details for the current user
+ */
+const getCurrentUserFiles = async () => {
+  const token = getCookieValue('jwt');
+
+  const requestOptions = {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  try {
+    const files = await axios.get(`${import.meta.env.VITE_API_V1_URL}/user/files`, requestOptions);
+
+    return files;
+  } catch (err) {
+    const { data } = err.response;
+    showAlert('error', data.message);
+  }
+};
+
+export { userSignup, userLogin, userLogout, userLoginCheck, getCurrentUserFiles };

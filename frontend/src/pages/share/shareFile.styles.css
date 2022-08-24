@@ -53,6 +53,12 @@
   font-size: 1.4rem;
 }
 
+.file-password-group {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
 .uploaded-file {
   display: flex;
   justify-content: space-between;

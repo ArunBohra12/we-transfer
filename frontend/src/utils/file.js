@@ -1,3 +1,5 @@
+'use strict';
+
 const getFileData = e => {
   const file = e.target.files[0] || {};
 

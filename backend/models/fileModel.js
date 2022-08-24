@@ -7,8 +7,11 @@ const fileSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  filePath: String,
+  originalName: String,
   filePassword: {
     type: String,
+    select: false,
   },
   // Embed user
   uploadedBy: {
@@ -16,9 +19,18 @@ const fileSchema = new mongoose.Schema({
     ref: 'User',
     required: true,
   },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
+fileSchema.methods.confirmPassword = async (inputPassword, originalPassword) =>
+  await bcrypt.compare(inputPassword, originalPassword);
+
 fileSchema.pre('save', async function (next) {
+  this.filePath = `file/${this._id}`;
+
   if (this.filePassword) {
     this.filePassword = await bcrypt.hash(this.filePassword, 10);
   }

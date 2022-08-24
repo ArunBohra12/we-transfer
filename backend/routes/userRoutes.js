@@ -7,6 +7,6 @@ const router = express.Router();
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
 
-router.get('/files', authController.protect, userController.getFiles);
+router.get('/files', authController.protect, userController.getCurrentUserFiles);
 
 module.exports = router;

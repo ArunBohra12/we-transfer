@@ -1,3 +1,5 @@
+'use strict';
+
 const showAlert = (type, message) => {
   const alertHTML = `<div class='alert alert--${type}'>${message}</div>`;
 
