@@ -1,5 +1,5 @@
-const path = require('node:path');
-const fs = require('node:fs');
+const path = require('path');
+const fs = require('fs');
 const multer = require('multer');
 const File = require('../models/fileModel');
 const catchAsync = require('../utils/catchAsync');

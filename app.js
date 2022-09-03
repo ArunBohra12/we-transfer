@@ -29,10 +29,11 @@ app.use('/file', downloadRouter);
 // For deployment
 // This block of code has to be here, at last in routes middleware stack
 if (process.env.NODE_ENV === 'production') {
+  const path = require('path');
   app.use(express.static('frontend/dist'));
 
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
   });
 }
 
