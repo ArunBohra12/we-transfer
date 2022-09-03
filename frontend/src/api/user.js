@@ -4,7 +4,7 @@ import showAlert from '../utils/alert';
 import axios from 'axios';
 import { setCookie, getCookieValue, deleteCookie } from '../utils/cookie';
 
-const setJwtToken = token => setCookie('jwt', token, import.meta.env.VITE_JWT_EXPIRY_DAYS, true);
+const setJwtToken = token => setCookie('jwt', token, 90, true);
 const setUserData = userData => localStorage.setItem('userInfo', JSON.stringify(userData));
 
 /**
@@ -25,7 +25,7 @@ const userSignup = async formData => {
   }
 
   try {
-    const { data } = await axios.post(`${import.meta.env.VITE_API_V1_URL}/user/signup`, userData);
+    const { data } = await axios.post(`/api/v1/user/signup`, userData);
 
     if (data.token) setJwtToken(data.token);
 
@@ -53,7 +53,7 @@ const userLogin = async formData => {
   }
 
   try {
-    const { data } = await axios.post(`${import.meta.env.VITE_API_V1_URL}/user/login`, userData);
+    const { data } = await axios.post(`/api/v1/user/login`, userData);
 
     if (data.token) setJwtToken(data.token);
 
@@ -106,7 +106,7 @@ const getCurrentUserFiles = async () => {
   };
 
   try {
-    const files = await axios.get(`${import.meta.env.VITE_API_V1_URL}/user/files`, requestOptions);
+    const files = await axios.get(`/api/v1/user/files`, requestOptions);
 
     return files;
   } catch (err) {

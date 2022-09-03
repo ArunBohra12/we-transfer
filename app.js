@@ -26,6 +26,16 @@ app.use('/api/v1/file', fileRouter);
 // Files Route
 app.use('/file', downloadRouter);
 
+// For deployment
+// This block of code has to be here, at last in routes middleware stack
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/dist'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
+  });
+}
+
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't ${req.method} ${req.originalUrl}`, 404));
 });

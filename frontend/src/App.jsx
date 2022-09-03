@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import LoginPage from './pages/loginAndSignup/login.page';
 import SignupPage from './pages/loginAndSignup/signup.page';
 import Header from './components/header/header.component';
@@ -24,6 +24,7 @@ function App() {
             <Route exact path='/upload' component={ShareFile} />
             <Route exact path='/profile' component={ProfilePage} />
             <Route exact path='/file/:fileId' children={<DownloadFile />} />
+            <Redirect to='/upload' />
           </Switch>
         ) : (
           <Switch>

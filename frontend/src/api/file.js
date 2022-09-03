@@ -18,7 +18,7 @@ export const uploadFile = async formData => {
   };
 
   try {
-    const fileUpload = await axios.post(`${import.meta.env.VITE_API_V1_URL}/file`, formData, requestOptions);
+    const fileUpload = await axios.post(`/api/v1/file`, formData, requestOptions);
 
     showAlert('success', 'File uploaded successfully');
     return fileUpload.data;
@@ -34,7 +34,7 @@ export const downloadFile = async (fileId, password = '') => {
       filePassword: password,
     };
 
-    const res = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/file/${fileId}`, requestData);
+    const res = await axios.post(`/file/${fileId}`, requestData);
 
     return res;
   } catch (err) {

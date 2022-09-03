@@ -19,7 +19,7 @@ const DownloadFile = () => {
       <div className='download-box'>
         <h1 className='download-heading'>Download File</h1>
 
-        <form action={`${import.meta.env.VITE_API_BASE_URL}/file/${fileId}`} method='post'>
+        <form action={`/file/${fileId}`} method='post'>
           <p className='file-name'>File: {fileId}</p>
           <input
             type='password'
