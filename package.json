@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start-dev": "SET NODE_ENV=development&&nodemon server.js",
-    "start-production": "SET NODE_ENV=production&&node server.js",
+    "start-production": "node server.js",
     "debug": "ndb server.js"
   },
   "author": "Arun Bohra",
